@@ -204,7 +204,8 @@ export function normalizeBoxPlot(spec: GenericUnitSpec<Encoding<string>, BoxPlot
             field: continuousAxisChannelDef.field,
             type: continuousAxisChannelDef.type
           },
-          ...encodingWithoutSizeColorAndContinuousAxis
+          ...encodingWithoutSizeColorAndContinuousAxis,
+          ...(color ? {color} : {})
         }
       }
     );
